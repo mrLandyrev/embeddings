@@ -1,0 +1,17 @@
+version: '3'
+services:
+  gateway:
+    image: traefik
+    ports:
+      - "8888:80"
+    volumes:
+      - "./traefik/traefik.yaml:/etc/traefik/traefik.yaml"
+      - "./traefik/providers:/etc/traefik/providers"
+  e5-large-v2:
+    build:
+      context: ./e5-large-v2/.
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]

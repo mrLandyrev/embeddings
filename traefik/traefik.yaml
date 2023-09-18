@@ -1,0 +1,10 @@
+accessLog: {}
+
+providers:
+  file:
+    directory: /etc/traefik/providers
+    watch: true
+
+entryPoints:
+  web:
+    address: ":80"

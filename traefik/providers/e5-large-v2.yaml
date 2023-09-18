@@ -1,0 +1,10 @@
+http:
+  services:
+    e5-large-v2:
+      loadBalancer:
+        servers:
+        - url: "http://e5-large-v2/"
+  routers:
+    example:
+      rule: "Query(`model=e5-large-v2`)"
+      service: e5-large-v2
