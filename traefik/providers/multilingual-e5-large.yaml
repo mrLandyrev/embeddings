@@ -1,0 +1,10 @@
+http:
+  services:
+    multilingual-e5-large:
+      loadBalancer:
+        servers:
+        - url: "http://multilingual-e5-large/"
+  routers:
+    multilingual-e5-large:
+      rule: "Query(`model=multilingual-e5-large`)"
+      service: multilingual-e5-large

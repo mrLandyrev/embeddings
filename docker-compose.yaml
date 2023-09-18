@@ -15,3 +15,11 @@ services:
         reservations:
           devices:
             - capabilities: [gpu]
+  multilingual-e5-large:
+    build:
+      context: ./multilingual-e5-large/.
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
